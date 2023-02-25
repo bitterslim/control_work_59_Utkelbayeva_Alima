@@ -2,13 +2,21 @@
 
 {% block title %}Guest Book{% endblock %}
 {% block content %}
-            {% for product in product %}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{guest.user}} ({{guest.email}})</h5>
-        <h7 class="card-title">{{product.text}}</h7>
-                  {% endfor %}
+<div class="container">
+    {% for guest in guest %}
 
+    <div class="card">
+  <h5 class="card-header">{{guest.user}}  ({{guest.email}})
+      <a href="{% url 'guest_update' guest.pk %}"><i class="bi bi-pencil-square"></i></a>
+      <a href="{% url 'guest_delete' guest.pk%}"><i class="bi bi-trash3"></i></a>
+</h5>
+
+  <div class="card-body">
+    <h5 class="card-title">{{guest.text}}</h5>
+    <a href="{% url 'guest_update' guest.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'guest_delete' guest.pk %}" class="btn btn-primary">Delete</a>
   </div>
+</div>
+    {% endfor %}
 </div>
 {% endblock %}
