@@ -1,9 +1,10 @@
+from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, get_object_or_404, redirect
 
-from project_guest.webapp.models import Guest
+from webapp.models import Guest
 
 
-def add_guest(request):
+def add_guest(request: WSGIRequest):
     if request.method == 'GET':
         return render(request, 'guest_add.html')
     guest_data = {
