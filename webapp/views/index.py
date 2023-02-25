@@ -5,7 +5,7 @@ from webapp.models import Guest
 
 
 def index_view(request: WSGIRequest):
-    guest = Guest.objects.all()
+    guest = Guest.objects.exclude(status="blocked")
     context = {
         'guest' : guest
     }
