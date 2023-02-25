@@ -3,5 +3,5 @@ from .models import Guest
 
 @admin.register(Guest)
 class GuestAdmin(admin.ModelAdmin):
-    list_display = ['user', 'email', 'text', 'status', 'updated_at']
+    list_display = ['user', 'email', 'text', 'status']
 
