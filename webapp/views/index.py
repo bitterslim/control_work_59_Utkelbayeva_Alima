@@ -1,7 +1,7 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render
 
-from models import Guest
+from webapp.models import Guest
 
 
 def index_view(request: WSGIRequest):
