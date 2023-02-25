@@ -12,9 +12,7 @@
 </h5>
 
   <div class="card-body">
-    <h5 class="card-title">{{guest.text}}</h5>
-    <a href="{% url 'guest_update' guest.pk %}" class="btn btn-primary">Edit</a>
-    <a href="{% url 'guest_delete' guest.pk %}" class="btn btn-primary">Delete</a>
+    <p class="card-title">{{guest.text}}</p>
   </div>
 </div>
     {% endfor %}
