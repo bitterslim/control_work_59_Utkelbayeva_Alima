@@ -7,6 +7,6 @@ from webapp.models import Guest
 def index_view(request: WSGIRequest):
     guest = Guest.objects.exclude(status="blocked")
     context = {
-        'guest' : guest
+        'guest': guest
     }
     return render(request, 'index.html', context=context)
