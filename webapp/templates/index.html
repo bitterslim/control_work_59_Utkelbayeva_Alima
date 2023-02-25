@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Guest Book{% endblock %}
+{% block content %}
+            {% for product in product %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{guest.user}} ({{guest.email}})</h5>
+        <h7 class="card-title">{{product.text}}</h7>
+                  {% endfor %}
+
+  </div>
+</div>
+{% endblock %}
